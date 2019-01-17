@@ -1,0 +1,25 @@
+- name: Create an ec2 instance
+  hosts: localhost
+  gather_facts: False
+  vars:
+    keypair: 
+    instance_type: m1.small
+    security_group: my_securitygroup
+    image: my_ami_id
+    region: us-east-1
+    count: 
+    subnet_id:
+  
+  tasks:
+    - name: Launch instance
+      ec2:
+         key_name: "{{ keypair }}"
+         group: "{{ security_group }}"
+         instance_type: "{{ instance_type }}"
+         image: "{{ image }}"
+         wait: true
+         region: "{{ region }}"
+         vpc_subnet_id: "{{ subnet_id }}"
+         assign_public_ip: yes
+         exact_count: "{{ count }}"
+      register: ec2
