@@ -24,15 +24,7 @@
         - chrony
         - sudo
         - rsyslog
-
-    - name: Ensure standard chrony config
-      copy:
-        src: files/chrony.conf
-        dest: /etc/chrony.conf
-        mode: 0644
-        owner: root
-        group: root
-
+        
     - name: Ensure standard sudo config
       copy:
         src: files/sudoers
@@ -40,15 +32,6 @@
         mode: 0640
         owner: root
         group: root
-
-    - name: Ensure log forwarding is configured
-      copy:
-        src: files/syslog
-        dest: /etc/rsyslog.d/forward.conf
-        mode: 0644
-        owner: root
-        group: root
-      notify: restart_syslog
 
     - name: Ensure SELinux is enabled
       selinux:
