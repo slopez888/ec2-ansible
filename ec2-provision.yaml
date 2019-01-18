@@ -6,7 +6,7 @@
     instance_type: m1.small
     security_group: my_securitygroup
     image: my_ami_id
-    region: us-west-2a
+    region: us-west-2
     count: 1
     subnet_id: subnet-07d10bc0dda0bbfc6
   
