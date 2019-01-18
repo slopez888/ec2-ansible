@@ -18,7 +18,7 @@
 
     - name: Install needed software
       yum:
-        name: "{{contact.item}}"
+        name: "{{item}}"
         state: latest
       with_items:
         - chrony
@@ -57,7 +57,7 @@
 
     - name: Ensure SELinux booleans are set properly
       seboolean:
-        name: "{{contact.item}}"
+        name: "{{item}}"
         persistent: true
         state: false
       with_items:
@@ -67,7 +67,7 @@
       
     - name: Ensure proper services are running
       service:
-        name: "{{contact.item}}"
+        name: "{{item}}"
         state: running
         enabled: yes
       with_items:
