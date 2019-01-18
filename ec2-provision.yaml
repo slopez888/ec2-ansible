@@ -28,7 +28,7 @@
          assign_public_ip: yes
          instance_tags:
            Tower: RHEL
-           Name: {{" name "}}
+           Name: "{{ name }}"
          count_tag:
            Name: web
          exact_count: "{{ count }}"
