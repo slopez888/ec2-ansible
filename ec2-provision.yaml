@@ -9,6 +9,7 @@
     security_group: my_securitygroup
     image: my_ami_id
     region: us-west-2
+    zone: us-west-2a
     count: 1
     subnet_id: subnet-07d10bc0dda0bbfc6
   
@@ -21,9 +22,12 @@
          image: "{{ image }}"
          wait: true
          region: "{{ region }}"
+         zone: "{ zone }"
          vpc_subnet_id: "{{ subnet_id }}"
          assign_public_ip: yes
          instance_tags:
            Tower: RHEL
+         count_tag:
+           Name: web
          exact_count: "{{ count }}"
       register: ec2
