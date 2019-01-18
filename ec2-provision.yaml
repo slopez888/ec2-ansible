@@ -22,7 +22,7 @@
          image: "{{ image }}"
          wait: true
          region: "{{ region }}"
-         zone: "{ zone }"
+         zone: "{{ zone }}"
          vpc_subnet_id: "{{ subnet_id }}"
          assign_public_ip: yes
          instance_tags:
