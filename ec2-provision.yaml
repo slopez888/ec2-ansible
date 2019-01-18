@@ -7,6 +7,7 @@
     keypair: 
     instance_type: m1.small
     security_group: my_securitygroup
+    name:
     image: my_ami_id
     region: us-west-2
     zone: us-west-2a
@@ -27,6 +28,7 @@
          assign_public_ip: yes
          instance_tags:
            Tower: RHEL
+           Name: {{" name "}}
          count_tag:
            Name: web
          exact_count: "{{ count }}"
