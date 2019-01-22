@@ -1,7 +1,7 @@
 - name: Create an ec2 instance
   hosts: localhost
   connection: local
-  become: Flase
+  become: False
   gather_facts: False
   vars:
     keypair: 
