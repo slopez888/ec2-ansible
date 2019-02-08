@@ -43,7 +43,7 @@
     - name: Ensure proper services are running
       service:
         name: "{{item}}"
-        state: running
+        state: started
         enabled: yes
       with_items:
         - rsyslog
